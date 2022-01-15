@@ -1,7 +1,14 @@
+import { Routes, Route } from 'react-router-dom'
+import { Home } from './views/Home'
+import { Navbar } from './components/Navbar'
+
 export const App = () => {
 	return (
 		<>
-			<h1>Hello World</h1>
+			<Navbar />
+			<Routes>
+				<Route path='/' element={<Home />} />
+			</Routes>
 		</>
 	)
 }
