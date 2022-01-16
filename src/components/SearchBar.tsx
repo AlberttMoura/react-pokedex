@@ -17,6 +17,7 @@ export const SearchBar = (props: SearchBarProps) => {
 				<input
 					type='image'
 					src={SearchIcon}
+					alt='search'
 					className='w-10 active:w-12 m-auto ease-linear duration-100 outline-0 bg-transparent'
 					onClick={() => {
 						props.childToParent(
