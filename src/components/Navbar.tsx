@@ -4,7 +4,7 @@ import PokedexLogo from '../assets/pokedexlogo.png'
 export const Navbar = () => {
 	return (
 		<div
-			className='px-4 flex py-2 items-center'
+			className='px-4 flex py-2 items-center sm:px-20 sm:py-3 lg:px-32'
 			style={{ backgroundColor: '#ff2f2f' }}
 		>
 			<Link to='/'>

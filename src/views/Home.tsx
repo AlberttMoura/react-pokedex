@@ -30,7 +30,7 @@ export const Home = () => {
 	return (
 		<>
 			<SearchBar childToParent={childToParent} />
-			<div className='grid grid-cols-2 sm:grid-cols-3 w-full max-w-4xl m-auto bg-white px-10 py-10'>
+			<div className='grid grid-cols-2 sm:grid-cols-3 w-full max-w-4xl m-auto bg-white px-10'>
 				{allPokes
 					.filter((poke) => {
 						return data.trim() !== '' ? poke.name.includes(data) : false
