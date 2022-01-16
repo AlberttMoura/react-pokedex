@@ -91,9 +91,14 @@ export const PokeBox = (props: PokeBoxProps) => {
 				alt=''
 				className='bg-white m-auto px-10 rounded mb-3'
 			/>
-			<div className='flex justify-center'>
+			<div
+				className={
+					'flex justify-center grid gap-x-2 ' +
+					(pokeInfo?.types[1]?.type.name ? 'grid-cols-2' : 'grid-cols-1 px-10')
+				}
+			>
 				<p
-					className='text-xl font-medium px-2 py-1 mx-3 text-gray-800 rounded-xl'
+					className='text-xl font-medium px-2 py-1 text-gray-800 rounded-xl w-full'
 					style={{
 						backgroundColor: getColorType(pokeInfo?.types[0]?.type.name),
 					}}
@@ -102,7 +107,7 @@ export const PokeBox = (props: PokeBoxProps) => {
 				</p>
 				{pokeInfo?.types[1]?.type.name ? (
 					<p
-						className='text-xl font-medium px-2 py-1 mx-3 text-gray-800 rounded-xl'
+						className='text-xl font-medium px-2 py-1 text-gray-800 rounded-xl w-full'
 						style={{
 							backgroundColor: getColorType(pokeInfo?.types[1]?.type.name),
 						}}
