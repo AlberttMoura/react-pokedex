@@ -22,8 +22,9 @@ export const SearchBar = (props: SearchBarProps) => {
 					className='w-10 active:w-12 m-auto ease-linear duration-100 outline-0 bg-transparent'
 					onClick={() => {
 						props.childSearchToParent(
-							(document.getElementsByName('pokesearch')[0] as HTMLInputElement)
-								.value
+							(
+								document.getElementsByName('pokesearch')[0] as HTMLInputElement
+							).value.toLowerCase()
 						)
 					}}
 				/>
