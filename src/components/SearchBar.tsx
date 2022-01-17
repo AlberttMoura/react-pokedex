@@ -24,7 +24,9 @@ export const SearchBar = (props: SearchBarProps) => {
 						props.childSearchToParent(
 							(
 								document.getElementsByName('pokesearch')[0] as HTMLInputElement
-							).value.toLowerCase()
+							).value
+								.toLowerCase()
+								.trim()
 						)
 					}}
 				/>
