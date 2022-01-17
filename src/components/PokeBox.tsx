@@ -287,11 +287,13 @@ export const PokeBox = (props: PokeBoxProps) => {
 				<p className='text-white text-md sm:text-2xl font-semibold sm:font-medium font-mono'>
 					{pokeInfo?.name}
 				</p>
-				<img
-					src={pokeInfo?.sprites.front_default}
-					alt=''
-					className='bg-white m-auto px-2 sm:px-10 rounded mb-3 h-20 sm:w-full'
-				/>
+				<div className='w-full bg-white rounded mb-3 h-20'>
+					<img
+						src={pokeInfo?.sprites.front_default}
+						alt={pokeInfo?.name}
+						className='bg-white m-auto sm:px-10 rounded h-full sm:w-full'
+					/>
+				</div>
 				<div
 					className={
 						'flex justify-center grid gap-x-2 ' +
