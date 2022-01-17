@@ -6,13 +6,13 @@ interface SearchBarProps {
 
 export const SearchBar = (props: SearchBarProps) => {
 	return (
-		<div className='w-full text-center bg-gray-800 py-6 items-center flex'>
+		<div className='w-full text-center bg-gray-800 py-6 items-center flex px-2'>
 			<input
 				name='pokesearch'
 				type='text'
 				placeholder='Buscar Pokemon'
 				autoComplete='off'
-				className='border-gray-600 border-4 rounded-full w-1/2 h-12 text-center text-3xl outline-0 ml-auto mr-3 max-w-md'
+				className='border-gray-600 border-4 rounded-full w-full sm:w-1/2 h-12 text-center text-3xl outline-0 ml-auto mr-3 max-w-md'
 			/>
 			<div className='mr-auto w-12 h-12 items-center flex'>
 				<input

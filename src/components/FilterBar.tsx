@@ -54,8 +54,8 @@ export const FilterBar = (props: FilterBarProps) => {
 	}, [filters, props])
 
 	return (
-		<div className='w-full bg-gray-600 py-2'>
-			<div className='grid grid-cols-3 w-full max-w-sm md:max-w-2xl lg:max-w-4xl m-auto gap-x-12 gap-y-2 md:grid-cols-4 md:gap-x-3 lg:grid-cols-6 lg:gap-x-8'>
+		<div className='w-full bg-gray-600 py-2 px-2'>
+			<div className='grid grid-cols-3 w-full max-w-sm md:max-w-2xl lg:max-w-4xl m-auto gp-x-5 sm:gap-x-12 gap-y-2 md:grid-cols-4 md:gap-x-3 lg:grid-cols-6 lg:gap-x-8'>
 				<div
 					onClick={() => setFilters({ ...filters, bug: !filters.bug })}
 					className='flex items-center cursor-pointer w-max'
@@ -67,7 +67,9 @@ export const FilterBar = (props: FilterBarProps) => {
 						onChange={() => setFilters({ ...filters, bug: !filters.bug })}
 						className='form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-yellow-500 checked:border-yellow-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2'
 					/>
-					<p className='text-white font-mono font-medium text-2xl'>Bug</p>
+					<p className='text-white font-mono font-semibold sm:font-medium text-lg sm:text-2xl'>
+						Bug
+					</p>
 				</div>
 				<div
 					onClick={() => setFilters({ ...filters, dark: !filters.dark })}
@@ -80,7 +82,9 @@ export const FilterBar = (props: FilterBarProps) => {
 						onChange={() => setFilters({ ...filters, dark: !filters.dark })}
 						className='form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-yellow-500 checked:border-yellow-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2'
 					/>
-					<p className='text-white font-mono font-medium text-2xl'>Dark</p>
+					<p className='text-white font-mono font-semibold sm:font-medium text-lg sm:text-2xl'>
+						Dark
+					</p>
 				</div>
 				<div
 					onClick={() => setFilters({ ...filters, dragon: !filters.dragon })}
@@ -93,7 +97,9 @@ export const FilterBar = (props: FilterBarProps) => {
 						onChange={() => setFilters({ ...filters, dragon: !filters.dragon })}
 						className='form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-yellow-500 checked:border-yellow-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2'
 					/>
-					<p className='text-white font-mono font-medium text-2xl'>Dragon</p>
+					<p className='text-white font-mono font-semibold sm:font-medium text-lg sm:text-2xl'>
+						Dragon
+					</p>
 				</div>
 				<div
 					onClick={() =>
@@ -110,7 +116,9 @@ export const FilterBar = (props: FilterBarProps) => {
 						}
 						className='form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-yellow-500 checked:border-yellow-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2'
 					/>
-					<p className='text-white font-mono font-medium text-2xl'>Electric</p>
+					<p className='text-white font-mono font-semibold sm:font-medium text-lg sm:text-2xl'>
+						Electric
+					</p>
 				</div>
 				<div
 					onClick={() => setFilters({ ...filters, fairy: !filters.fairy })}
@@ -123,7 +131,9 @@ export const FilterBar = (props: FilterBarProps) => {
 						onChange={() => setFilters({ ...filters, fairy: !filters.fairy })}
 						className='form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-yellow-500 checked:border-yellow-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2'
 					/>
-					<p className='text-white font-mono font-medium text-2xl'>Fairy</p>
+					<p className='text-white font-mono font-semibold sm:font-medium text-lg sm:text-2xl'>
+						Fairy
+					</p>
 				</div>
 				<div
 					onClick={() =>
@@ -140,7 +150,9 @@ export const FilterBar = (props: FilterBarProps) => {
 						}
 						className='form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-yellow-500 checked:border-yellow-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2'
 					/>
-					<p className='text-white font-mono font-medium text-2xl'>Fighting</p>
+					<p className='text-white font-mono font-semibold sm:font-medium text-lg sm:text-2xl'>
+						Fighting
+					</p>
 				</div>
 				<div
 					onClick={() => setFilters({ ...filters, fire: !filters.fire })}
@@ -153,7 +165,9 @@ export const FilterBar = (props: FilterBarProps) => {
 						onChange={() => setFilters({ ...filters, fire: !filters.fire })}
 						className='form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-yellow-500 checked:border-yellow-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2'
 					/>
-					<p className='text-white font-mono font-medium text-2xl'>Fire</p>
+					<p className='text-white font-mono font-semibold sm:font-medium text-lg sm:text-2xl'>
+						Fire
+					</p>
 				</div>
 				<div
 					onClick={() => setFilters({ ...filters, flying: !filters.flying })}
@@ -166,7 +180,9 @@ export const FilterBar = (props: FilterBarProps) => {
 						onChange={() => setFilters({ ...filters, flying: !filters.flying })}
 						className='form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-yellow-500 checked:border-yellow-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2'
 					/>
-					<p className='text-white font-mono font-medium text-2xl'>Flying</p>
+					<p className='text-white font-mono font-semibold sm:font-medium text-lg sm:text-2xl'>
+						Flying
+					</p>
 				</div>
 				<div
 					onClick={() => setFilters({ ...filters, ghost: !filters.ghost })}
@@ -179,7 +195,9 @@ export const FilterBar = (props: FilterBarProps) => {
 						onChange={() => setFilters({ ...filters, ghost: !filters.ghost })}
 						className='form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-yellow-500 checked:border-yellow-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2'
 					/>
-					<p className='text-white font-mono font-medium text-2xl'>Ghost</p>
+					<p className='text-white font-mono font-semibold sm:font-medium text-lg sm:text-2xl'>
+						Ghost
+					</p>
 				</div>
 				<div
 					onClick={() => setFilters({ ...filters, grass: !filters.grass })}
@@ -192,7 +210,9 @@ export const FilterBar = (props: FilterBarProps) => {
 						onChange={() => setFilters({ ...filters, grass: !filters.grass })}
 						className='form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-yellow-500 checked:border-yellow-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2'
 					/>
-					<p className='text-white font-mono font-medium text-2xl'>Grass</p>
+					<p className='text-white font-mono font-semibold sm:font-medium text-lg sm:text-2xl'>
+						Grass
+					</p>
 				</div>
 				<div
 					onClick={() => setFilters({ ...filters, ground: !filters.ground })}
@@ -205,7 +225,9 @@ export const FilterBar = (props: FilterBarProps) => {
 						onChange={() => setFilters({ ...filters, ground: !filters.ground })}
 						className='form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-yellow-500 checked:border-yellow-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2'
 					/>
-					<p className='text-white font-mono font-medium text-2xl'>Ground</p>
+					<p className='text-white font-mono font-semibold sm:font-medium text-lg sm:text-2xl'>
+						Ground
+					</p>
 				</div>
 				<div
 					onClick={() => setFilters({ ...filters, ice: !filters.ice })}
@@ -218,7 +240,9 @@ export const FilterBar = (props: FilterBarProps) => {
 						onChange={() => setFilters({ ...filters, ice: !filters.ice })}
 						className='form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-yellow-500 checked:border-yellow-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2'
 					/>
-					<p className='text-white font-mono font-medium text-2xl'>Ice</p>
+					<p className='text-white font-mono font-semibold sm:font-medium text-lg sm:text-2xl'>
+						Ice
+					</p>
 				</div>
 				<div
 					onClick={() => setFilters({ ...filters, normal: !filters.normal })}
@@ -231,7 +255,9 @@ export const FilterBar = (props: FilterBarProps) => {
 						onChange={() => setFilters({ ...filters, normal: !filters.normal })}
 						className='form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-yellow-500 checked:border-yellow-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2'
 					/>
-					<p className='text-white font-mono font-medium text-2xl'>Normal</p>
+					<p className='text-white font-mono font-semibold sm:font-medium text-lg sm:text-2xl'>
+						Normal
+					</p>
 				</div>
 				<div
 					onClick={() => setFilters({ ...filters, poison: !filters.poison })}
@@ -244,7 +270,9 @@ export const FilterBar = (props: FilterBarProps) => {
 						onChange={() => setFilters({ ...filters, poison: !filters.poison })}
 						className='form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-yellow-500 checked:border-yellow-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2'
 					/>
-					<p className='text-white font-mono font-medium text-2xl'>Poison</p>
+					<p className='text-white font-mono font-semibold sm:font-medium text-lg sm:text-2xl'>
+						Poison
+					</p>
 				</div>
 				<div
 					onClick={() => setFilters({ ...filters, psychic: !filters.psychic })}
@@ -259,7 +287,9 @@ export const FilterBar = (props: FilterBarProps) => {
 						}
 						className='form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-yellow-500 checked:border-yellow-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2'
 					/>
-					<p className='text-white font-mono font-medium text-2xl'>Psychic</p>
+					<p className='text-white font-mono font-semibold sm:font-medium text-lg sm:text-2xl'>
+						Psychic
+					</p>
 				</div>
 				<div
 					onClick={() => setFilters({ ...filters, rock: !filters.rock })}
@@ -272,7 +302,9 @@ export const FilterBar = (props: FilterBarProps) => {
 						onChange={() => setFilters({ ...filters, rock: !filters.rock })}
 						className='form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-yellow-500 checked:border-yellow-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2'
 					/>
-					<p className='text-white font-mono font-medium text-2xl'>Rock</p>
+					<p className='text-white font-mono font-semibold sm:font-medium text-lg sm:text-2xl'>
+						Rock
+					</p>
 				</div>
 				<div
 					onClick={() => setFilters({ ...filters, steel: !filters.steel })}
@@ -285,7 +317,9 @@ export const FilterBar = (props: FilterBarProps) => {
 						onChange={() => setFilters({ ...filters, steel: !filters.steel })}
 						className='form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-yellow-500 checked:border-yellow-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2'
 					/>
-					<p className='text-white font-mono font-medium text-2xl'>Steel</p>
+					<p className='text-white font-mono font-semibold sm:font-medium text-lg sm:text-2xl'>
+						Steel
+					</p>
 				</div>
 				<div
 					onClick={() => setFilters({ ...filters, water: !filters.water })}
@@ -298,7 +332,9 @@ export const FilterBar = (props: FilterBarProps) => {
 						onChange={() => setFilters({ ...filters, water: !filters.water })}
 						className='form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-yellow-500 checked:border-yellow-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2'
 					/>
-					<p className='text-white font-mono font-medium text-2xl'>Water</p>
+					<p className='text-white font-mono font-semibold sm:font-medium text-lg sm:text-2xl'>
+						Water
+					</p>
 				</div>
 			</div>
 			<div
@@ -316,7 +352,7 @@ export const FilterBar = (props: FilterBarProps) => {
 					}
 					className='form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-500 checked:border-blue-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2'
 				/>
-				<p className='text-white font-mono font-medium text-2xl'>
+				<p className='text-white font-mono font-semibold sm:font-medium text-lg sm:text-2xl'>
 					Intersection of Types
 				</p>
 			</div>

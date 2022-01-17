@@ -360,15 +360,15 @@ export const PokeBox = (props: PokeBoxProps) => {
 
 	if (checkFilters()) {
 		return (
-			<div className='m-auto bg-gray-700 px-3 py-3 rounded w-52 justify-center text-center my-3'>
+			<div className='m-auto bg-gray-700 px-3 py-3 rounded justify-center text-center my-3 w-40 sm:w-56'>
 				<p className='text-white'>#{pokeInfo?.id}</p>
-				<p className='text-white text-2xl font-medium font-mono'>
+				<p className='text-white text-md sm:text-2xl font-semibold sm:font-medium font-mono'>
 					{pokeInfo?.name}
 				</p>
 				<img
 					src={pokeInfo?.sprites.front_default}
 					alt=''
-					className='bg-white m-auto px-10 rounded mb-3'
+					className='bg-white m-auto px-2 sm:px-10 rounded mb-3 h-20 sm:w-full'
 				/>
 				<div
 					className={
@@ -379,7 +379,7 @@ export const PokeBox = (props: PokeBoxProps) => {
 					}
 				>
 					<p
-						className='text-xl font-medium px-2 py-1 text-gray-800 rounded-xl w-full'
+						className='text-sm  sm:text-xl font-medium px-1 sm:px-2 py-1 text-gray-800 rounded-xl w-full'
 						style={{
 							backgroundColor: getColorType(pokeInfo?.types[0]?.type.name),
 						}}
@@ -388,7 +388,7 @@ export const PokeBox = (props: PokeBoxProps) => {
 					</p>
 					{pokeInfo?.types[1]?.type.name ? (
 						<p
-							className='text-xl font-medium px-2 py-1 text-gray-800 rounded-xl w-full'
+							className='text-sm  sm:text-xl font-medium px-1 sm:px-2 py-1 text-gray-800 rounded-xl w-full'
 							style={{
 								backgroundColor: getColorType(pokeInfo?.types[1]?.type.name),
 							}}
