@@ -1,7 +1,7 @@
 import SearchIcon from '../assets/searchicon.png'
 
 interface SearchBarProps {
-	childToParent: Function
+	childSearchToParent: Function
 }
 
 export const SearchBar = (props: SearchBarProps) => {
@@ -21,7 +21,7 @@ export const SearchBar = (props: SearchBarProps) => {
 					alt='search'
 					className='w-10 active:w-12 m-auto ease-linear duration-100 outline-0 bg-transparent'
 					onClick={() => {
-						props.childToParent(
+						props.childSearchToParent(
 							(document.getElementsByName('pokesearch')[0] as HTMLInputElement)
 								.value
 						)
