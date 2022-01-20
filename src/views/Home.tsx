@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { PokeBox } from '../components/PokeBox'
 import { FilterBar } from '../components/FilterBar'
+import { Footer } from '../components/Footer'
 
 interface Poke {
 	name: string
@@ -73,11 +74,13 @@ interface Pokemon {
 	}
 }
 
+const INDEXJUMP = 12
+
 export const Home = () => {
 	const [allPokes, setAllPokes] = useState<Poke[]>([])
 	const [filters, setFilters] = useState<Filter>(defaultFilter)
 	const [pokesInfo, setPokesInfo] = useState<Pokemon[]>([])
-	const [pokeIndex, setPokeIndex] = useState(12)
+	const [pokeIndex, setPokeIndex] = useState(INDEXJUMP)
 
 	useEffect(() => {
 		axios
@@ -269,7 +272,7 @@ export const Home = () => {
 
 	const childSearchToParent = (pokesearch: string) => {
 		setPokesInfo([])
-		setPokeIndex(12)
+		setPokeIndex(INDEXJUMP)
 		const namesPokes = allPokes.filter((poke) => {
 			return poke.name.includes(pokesearch)
 		})
@@ -283,36 +286,46 @@ export const Home = () => {
 				setPokesInfo((pokesInfo) => [...pokesInfo, res.data])
 			}
 		})
+		setPokesInfo((pokesInfo) =>
+			pokesInfo.sort((a, b) => (a.id > b.id ? 1 : -1))
+		)
 	}
 
 	const childFilterToParent = (childFilters: Filter): void => {
 		setFilters(childFilters)
 	}
 	return (
-		<>
+		<div className='grid grid-cols-1 min-h-screen'>
 			<SearchBar childSearchToParent={childSearchToParent} />
 			<FilterBar childFilterToParent={childFilterToParent} />
-			<div className='grid grid-cols-2 md:grid-cols-3 w-full max-w-4xl m-auto bg-white px-0 sm:px-4 md:px-10'>
-				{pokesInfo
-					.sort((a, b) => (a.id > b.id ? 1 : -1))
-					.map((poke, index) => {
-						return index < pokeIndex ? (
-							<PokeBox key={poke.id} pokeInfo={poke} />
-						) : (
-							''
-						)
-					})}
+			<div className='bg-white m-auto w-full max-w-4xl py-5 h-full'>
+				<div className='grid grid-cols-2 md:grid-cols-3 w-full m-auto px-0 sm:px-4 md:px-10'>
+					{pokesInfo
+						.sort((a, b) => (a.id > b.id ? 1 : -1))
+						.map((poke, index) => {
+							return index < pokeIndex ? (
+								<PokeBox key={poke.id} pokeInfo={poke} />
+							) : (
+								''
+							)
+						})}
+				</div>
+				{pokesInfo.length > pokeIndex ? (
+					<div className='flex mt-8'>
+						<input
+							type='button'
+							value='More'
+							onClick={() => {
+								setPokeIndex((pokeIndex) => pokeIndex + INDEXJUMP)
+							}}
+							className='m-auto focus cursor-pointer bg-green-600 text-2xl text-white font-semibold px-4 py-1 rounded'
+						/>
+					</div>
+				) : (
+					''
+				)}
 			</div>
-			<div className='flex mt-12'>
-				<input
-					type='button'
-					value='More'
-					onClick={() => {
-						setPokeIndex((pokeIndex) => pokeIndex + 12)
-					}}
-					className='m-auto focus cursor-pointer bg-green-600 text-2xl text-white font-semibold px-4 py-1 rounded'
-				/>
-			</div>
-		</>
+			<Footer />
+		</div>
 	)
 }
