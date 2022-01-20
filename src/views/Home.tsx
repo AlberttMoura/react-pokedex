@@ -74,11 +74,10 @@ interface Pokemon {
 }
 
 export const Home = () => {
-	const [data, setData] = useState('')
 	const [allPokes, setAllPokes] = useState<Poke[]>([])
 	const [filters, setFilters] = useState<Filter>(defaultFilter)
 	const [pokesInfo, setPokesInfo] = useState<Pokemon[]>([])
-	const [pokeIndex, setPokeIndex] = useState(0)
+	const [pokeIndex, setPokeIndex] = useState(12)
 
 	useEffect(() => {
 		axios
@@ -90,10 +89,6 @@ export const Home = () => {
 				console.log(err)
 			})
 	}, [])
-
-	useEffect(() => {
-		console.log('update')
-	}, [pokesInfo])
 
 	const checkFilters = (pokeInfo: Pokemon) => {
 		return filters.intersection
@@ -272,34 +267,22 @@ export const Home = () => {
 			: false
 	}
 
-	const childSearchToParent = (
-		pokesearch: string,
-		init: number = pokeIndex,
-		end: number = pokeIndex + 12
-	) => {
-		setPokeIndex(0)
-		setData(pokesearch)
+	const childSearchToParent = (pokesearch: string) => {
 		setPokesInfo([])
+		setPokeIndex(12)
 		const namesPokes = allPokes.filter((poke) => {
 			return poke.name.includes(pokesearch)
 		})
-		loadPokes(namesPokes, 0, end)
-		console.log('oi')
+		loadPokes(namesPokes)
 	}
 
-	const loadPokes = (
-		pokes: Poke[],
-		i: number = pokeIndex,
-		f: number = pokeIndex + 12
-	) => {
-		pokes.slice(i, f).map(async (poke) => {
+	const loadPokes = (pokes: Poke[]) => {
+		pokes.map(async (poke) => {
 			const res = await axios.get(poke.url)
 			if (checkFilters(res.data)) {
-				//qaaa.push(res.data)
 				setPokesInfo((pokesInfo) => [...pokesInfo, res.data])
 			}
 		})
-		setPokeIndex(pokeIndex + 12)
 	}
 
 	const childFilterToParent = (childFilters: Filter): void => {
@@ -312,22 +295,22 @@ export const Home = () => {
 			<div className='grid grid-cols-2 md:grid-cols-3 w-full max-w-4xl m-auto bg-white px-0 sm:px-4 md:px-10'>
 				{pokesInfo
 					.sort((a, b) => (a.id > b.id ? 1 : -1))
-					.map((poke) => {
-						return <PokeBox key={poke.id} pokeInfo={poke} />
+					.map((poke, index) => {
+						return index < pokeIndex ? (
+							<PokeBox key={poke.id} pokeInfo={poke} />
+						) : (
+							''
+						)
 					})}
 			</div>
-			<div className='bg-gray-600 flex'>
+			<div className='flex mt-12'>
 				<input
 					type='button'
 					value='More'
 					onClick={() => {
-						loadPokes(
-							allPokes.filter((poke) => {
-								return poke.name.includes(data)
-							})
-						)
+						setPokeIndex((pokeIndex) => pokeIndex + 12)
 					}}
-					className='m-auto focus cursor-pointer'
+					className='m-auto focus cursor-pointer bg-green-600 text-2xl text-white font-semibold px-4 py-1 rounded'
 				/>
 			</div>
 		</>
