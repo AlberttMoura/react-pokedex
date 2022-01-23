@@ -8,7 +8,7 @@
 
 ## Produção
 
-2 - barn build ou npm run build
+2 - yarn build ou npm run build
 
 # Como funciona?
 
