@@ -23,3 +23,5 @@ Caso queira pokemons restritos ao tipo Planta e Água, marque a caixinha "Inters
 A aplicação exibe apenas 12 pokemons por vez. Clique em More para exibir mais pokemons
 
 ### Projeto feito utilizando React, Tailwind e a API: https://pokeapi.co
+
+## Projeto publicado em: https://react-pokedex-rust.vercel.app/
