@@ -298,8 +298,8 @@ export const Home = () => {
 		<div className='grid grid-cols-1 min-h-screen'>
 			<SearchBar childSearchToParent={childSearchToParent} />
 			<FilterBar childFilterToParent={childFilterToParent} />
-			<div className='bg-white m-auto w-full max-w-4xl py-5 h-full' style={{height: 100}}>
-				<div className='grid grid-cols-2 md:grid-cols-3 w-full m-auto px-0 sm:px-4 md:px-10'>
+			<div className='bg-white m-auto w-full max-w-4xl py-5 h-full'>
+				<div className='grid grid-cols-2 md:grid-cols-3 w-full m-auto px-0 sm:px-4 md:px-10' style={{minHeight: 200}}>
 					{pokesInfo
 						.sort((a, b) => (a.id > b.id ? 1 : -1))
 						.map((poke, index) => {
