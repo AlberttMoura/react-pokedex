@@ -10,7 +10,7 @@ export const SearchBar = (props: SearchBarProps) => {
 			<input
 				name='pokesearch'
 				type='text'
-				placeholder='Buscar Pokemon'
+				placeholder='Search Pokemon'
 				autoComplete='off'
 				onKeyDown={(e) => {
 					if (e.key === 'Enter')
